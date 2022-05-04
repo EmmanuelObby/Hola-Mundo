@@ -1,0 +1,40 @@
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+/**
+ * Hello world!
+ *
+ */
+
+public class Test03
+{
+	public static void main( String[] args ) throws InterruptedException
+	{
+        System.out.println( "Hello World!" );
+        
+        System.setProperty("webdriver.chrome.driver","..//Automatizacion02/Driver/chromedriver.exe ");
+        
+        WebDriver navegador =new  ChromeDriver ();
+        
+        navegador.get("http://automationpractice.com/index.php");
+        
+        //Buscar prenda "vestido casual"
+        navegador.findElement(By.xpath("//*[@id=\"search_query_top\"]")).sendKeys("casual dresses");
+        
+        Thread.sleep(2000);
+        
+        //Hacer click en boton de busqueda
+        navegador.findElement(By.xpath("//*[@id=\"searchbox\"]/button")).click();
+        
+        Thread.sleep(3000);
+        
+        //Volver menu inicial
+        navegador.findElement(By.xpath("//*[@id=\"header_logo\"]/a/img")).click();
+   
+        
+
+        	
+	}
